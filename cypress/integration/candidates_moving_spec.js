@@ -21,11 +21,8 @@ describe ("Moving candidates between columns", function () {
         try{
             cy.get('.App-column:nth-child(2) .CrewMember-up').click({ multiple: true });
         } catch (err) {
-            cy.log('Nothing to move out from Interviewing section', err)
+            console.log('Nothing to move out from Interviewing section', err)
         }
         expect(cy.get('.App-column,.CrewMember-up:nth-child(2)').should('arguments', 0))
     });
-    it.skip('Move from Interviewing to Hired', function(){
-        cy.get('Applied,.CrewMember-up:first-of-type').click({ multiple: true })
-    })
 })
