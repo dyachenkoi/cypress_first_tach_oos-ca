@@ -29,12 +29,3 @@ defaults: &defaults
   # after all tests finish running we need
   # to kill all background jobs (like "npm start &")
   - kill $(jobs -p) || true
-
-jobs:
-  include:
-    # we have multiple jobs to execute using just a single stage
-    # but we can pass group name via environment variable to Cypress test runner
-    - stage: test
-      env:
-        - STAGE_NAME=1x-electron
-      <<: *defaults
