@@ -14,18 +14,21 @@ cache:
     - npm run cy:verify
 
 defaults: &defaults
+  install:
+  - travis_wait 20 yarn install
+  before_script:
+  # Run application
+  - yarn run cypress open
+  ## print all Travis environment variables for debugging
+  #- npm start -- --silent &
+  #- npm run cy:run -- --record --parallel --group $STAGE_NAME
   script:
-    # Run application
-    - yarn install
-    - yarn run cypress open
-    ## print all Travis environment variables for debugging
-    - $(npm bin)/print-env TRAVIS
-    - $(npm bin)/cypress run --record --key 9942e243-4a25-4765-8e72-62aa318a561e
-    - npm start -- --silent &
-    - npm run cy:run -- --record --parallel --group $STAGE_NAME
-    # after all tests finish running we need
-    # to kill all background jobs (like "npm start &")
-    - kill $(jobs -p) || true
+  #    - $(npm bin)/print-env TRAVIS
+  - node_modules\.bin\cypress run --record --key 9942e243-4a25-4765-8e72-62aa318a561e
+
+  # after all tests finish running we need
+  # to kill all background jobs (like "npm start &")
+  - kill $(jobs -p) || true
 
 jobs:
   include:
