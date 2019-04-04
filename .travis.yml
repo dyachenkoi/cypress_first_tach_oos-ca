@@ -18,7 +18,7 @@ defaults: &defaults
   - travis_wait 20 yarn install
   before_script:
   # Run application
-  - yarn run cypress open
+  - yarn start
   ## print all Travis environment variables for debugging
   #- npm start -- --silent &
   #- npm run cy:run -- --record --parallel --group $STAGE_NAME
