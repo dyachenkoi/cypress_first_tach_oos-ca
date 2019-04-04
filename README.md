@@ -28,5 +28,4 @@ Cypress e2e framework is integrated into the application project. The section wi
 How to fix possible or known issues
 
 ### Error on 'yarn install'
-Update dependencies by running 'npm install' and re-execute 'yarn install' command 
-
+Update node version is accordance with requirements
