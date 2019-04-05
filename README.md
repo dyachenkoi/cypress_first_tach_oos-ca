@@ -19,10 +19,13 @@ App will be available on http://localhost:5000
 
 # CYPRESS.IO E2E TESTING
 
-Cypress e2e framework is integrated into the application project. The section will contain how to run test info
+Cypress e2e framework is integrated into the application project. 
+The section will contain how to run test info
 
-### Cypress set up
-`yarn install`
+### Run cypress tests
+Run following command and check results in cypress CI using generated URL after test suit execution
+ 
+`node_modules\.bin\cypress run --record --key 9942e243-4a25-4765-8e72-62aa318a561e`
 
 # TROUBLESHOOTING
 How to fix possible or known issues
